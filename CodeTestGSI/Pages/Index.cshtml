@@ -1,0 +1,24 @@
+﻿@page
+@model CodeTestGSI.Pages.IndexModel
+@{
+    ViewData["Title"] = "Text Conversion - William Antonius";
+}
+
+<h2>Text Conversion</h2>
+
+<form method="post">
+    <label for="inputText">Enter Text:</label>
+    <input type="text" id="inputText" name="inputText" required />
+    <button type="submit">Convert</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.InputText))
+{
+    <h3>Results:</h3>
+    <p><strong>Input Text:</strong> @Model.InputText</p> 
+    <p><strong>Step 1:</strong> @string.Join(" ", Model.Step1)</p>
+    <p><strong>Step 2:</strong> @Model.Step2</p>
+    <p><strong>Step 3:</strong> @Model.Step3</p>
+    <p><strong>Step 4:</strong> @Model.Step4</p>
+    <p><strong>Step 5:</strong> @string.Join(" ", Model.Step5)</p>
+}
